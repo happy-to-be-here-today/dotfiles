@@ -1,0 +1,132 @@
+@define-color dark_blue rgba(28, 26, 68, 1);
+@define-color my_ocean_blue rgba(28, 77, 255, 1);
+@define-color my_purple rgba(45, 25, 66, 1);
+@define-color my_light_purple rgba(95, 26, 109, 1);
+@define-color transfer_purple rgba(102, 46, 103, 1);
+@define-color my_pink rgba(249, 19, 77, 1);
+@define-color my_yellow rgba(226, 232, 71, 0.9);
+@define-color cyan rgba(17, 252, 228, 1);
+@define-color my_green rgba(138, 252, 132, 1);
+@define-color light_purple rgba(189, 166, 227, 1); @define-color very_light_purple rgba(165, 172, 226, 1);
+@define-color light_blue rgba(165, 203, 226, 1);
+
+* {
+	font-family: Tektur, 'Font Awesome 5';
+}
+
+window.main#waybar{
+	background: rgba(0, 0, 0, 0.1);
+	font-size: 15px;
+	font-weight: 600;
+
+	border-width: 2px;
+	border-image: linear-gradient(130deg, @dark_blue 0%, @my_purple 10%, @my_pink 17%, @my_yellow 19%, @my_yellow 23%, @my_pink 28%, @cyan 31%, @my_pink 36%, @cyan 44%, @cyan 47%, @dark_blue 52%, @dark_blue 53%, rgba(17, 252, 228, 0.7) 55%, @my_green 68%, @my_green 71%, @light_purple 80%, @very_light_purple 82%, @light_blue 86%, @cyan 89%, @dark_blue 95%) 30;
+	border-style: solid;
+	border-radius: 0px;
+	color: black;
+}
+
+window.window_display#waybar{
+	/* background: linear-gradient(50deg, @cyan 10%, @my_pink 17%, @my_yellow 19%, @my_yellow 23%, @my_pink 28%, @cyan 31%, @my_pink 36%, @cyan 44%, @cyan 47%, rgba(17, 252, 228, 0.7) 55%, @my_green 68%, @my_green 71%, @light_purple 78%, @very_light_purple 82%, @light_blue 88%, @cyan 91%, @dark_blue 98%); */
+	background: transparent;
+	color: @cyan;
+}
+
+window.workspaces_display#waybar{
+	background: transparent;
+}
+
+window.workspaces_display#waybar #window{
+	color: @cyan;
+}
+
+tooltip * {
+	color: @cyan;
+	border-image: linear-gradient(130deg, @my_pink 0%, @my_pink 3%, @cyan 10%, @my_pink 17%, @my_yellow 19%, @my_yellow 23%, @my_pink 28%, @cyan 31%, @my_pink 36%, @cyan 44%, @cyan 47%, @dark_blue 52%, @dark_blue 53%, rgba(17, 252, 228, 0.7) 55%, @my_green 68%, @my_green 71%, @light_purple 80%, @very_light_purple 82%, @light_blue 86%, @cyan 89%, @my_pink 95%) 30;
+	background: linear-gradient(130deg, @my_purple 15%, black 50%, @dark_blue 85%);
+	opacity: 1;
+	border-style: solid;
+	border-width: 2px;
+}
+
+#clock.1 {
+	font-size: 10px;
+	color: @cyan;
+}
+
+#clock.2 {
+	font-size: 26px;
+	color: @cyan;
+}
+
+#clock.3 {
+	font-size: 10px;
+	color: @cyan;
+}
+
+#bluetooth {
+	color: @cyan;
+}
+
+#language {
+	font-size: 10px;
+	color: @cyan;
+}
+
+#custom-cpu-icon {
+	color: @my_pink;
+	font-size: 9px;
+}
+
+#cpu {
+	color: @my_pink; 
+}
+
+#temperature {
+	color: @my_pink;
+}
+
+#custom-memory-icon {
+	color: @my_yellow;
+	font-size: 9px;
+}
+
+#memory {
+	color: @my_yellow;
+}
+
+#custom-network-icon {
+	color: @my_pink;
+	font-size: 9px;
+}
+
+#custom-cava {
+	color: @cyan;
+}
+
+#network {
+	color: @my_green;
+}
+
+#privacy {
+	color: @cyan;
+}
+
+#custom-disk-icon {
+	color: @my_light_purple;
+	font-size: 9px;
+}
+	
+#disk {
+	color: @my_light_purple;
+}
+
+#wireplumber{
+	color: @my_ocean_blue;
+}
+
+#workspaces button.active{
+	background-color: @cyan;
+	color: black;
+}
+

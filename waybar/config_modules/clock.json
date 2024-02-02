@@ -1,0 +1,8 @@
+{
+	"format": "{:%H:%M}",
+	"type": "clock",
+	"timezone": "Europe/Chisinau",
+	"format-alt": "{:%Y-%m-%d}",
+
+}
+
