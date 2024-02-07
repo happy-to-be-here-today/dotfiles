@@ -22,7 +22,6 @@
 		"clock#3",
 	],
 	"modules-right": [
-		"custom/cava",
 		"bluetooth",
 		"hyprland/language",
 		"wireplumber"
@@ -129,7 +128,7 @@
 },
 
 	"custom/disk-icon": {
-		"format": "\tD\n\tS\n\tK",
+		"format": "\tS\n\tS\n\tD",
 	},
 	
 	"disk": {
@@ -155,6 +154,7 @@
 	"position": "top",
 	"modules-left": ["cpu"],
 	"modules-center": ["hyprland/window"],
+	"modules-right": ["custom/cava"],
 	
 	"cpu": {
 		"margin-top": 50,
@@ -172,6 +172,7 @@
                         "██" 
                 ]
         },
+	
 },
 
 { // WORKSPACES

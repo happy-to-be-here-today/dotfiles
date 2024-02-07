@@ -7,7 +7,8 @@
 @define-color my_yellow rgba(226, 232, 71, 0.9);
 @define-color cyan rgba(17, 252, 228, 1);
 @define-color my_green rgba(138, 252, 132, 1);
-@define-color light_purple rgba(189, 166, 227, 1); @define-color very_light_purple rgba(165, 172, 226, 1);
+@define-color light_purple rgba(189, 166, 227, 1); 
+@define-color very_light_purple rgba(165, 172, 226, 1);
 @define-color light_blue rgba(165, 203, 226, 1);
 
 * {
