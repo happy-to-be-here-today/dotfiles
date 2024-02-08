@@ -10,7 +10,7 @@
 @define-color light_purple rgba(189, 166, 227, 1); 
 @define-color very_light_purple rgba(165, 172, 226, 1);
 @define-color light_blue rgba(165, 203, 226, 1);
-
+@define-color hypr_blue rgb(2, 60, 130);
 * {
 	font-family: Tektur, 'Font Awesome 5';
 }
@@ -18,7 +18,6 @@
 window.main#waybar{
 	background: rgba(0, 0, 0, 0.1);
 	font-size: 15px;
-	font-weight: 600;
 
 	border-width: 2px;
 	border-image: linear-gradient(130deg, @dark_blue 0%, @my_purple 10%, @my_pink 17%, @my_yellow 19%, @my_yellow 23%, @my_pink 28%, @cyan 31%, @my_pink 36%, @cyan 44%, @cyan 47%, @dark_blue 52%, @dark_blue 53%, rgba(17, 252, 228, 0.7) 55%, @my_green 68%, @my_green 71%, @light_purple 80%, @very_light_purple 82%, @light_blue 86%, @cyan 89%, @dark_blue 95%) 30;
@@ -51,16 +50,19 @@ tooltip * {
 }
 
 #clock.1 {
+	font-weight: 600;
 	font-size: 10px;
 	color: @cyan;
 }
 
 #clock.2 {
+	font-weight: 500;
 	font-size: 26px;
 	color: @cyan;
 }
 
 #clock.3 {
+	font-weight: 600;
 	font-size: 10px;
 	color: @cyan;
 }
@@ -70,33 +72,39 @@ tooltip * {
 }
 
 #language {
-	font-size: 10px;
+	font-size: 12px;
 	color: @cyan;
 }
 
 #custom-cpu-icon {
+	font-weight: 600;
 	color: @my_pink;
 	font-size: 9px;
 }
 
 #cpu {
 	color: @my_pink; 
+	font-weight: 200;
 }
 
 #temperature {
+	font-weight: 200;
 	color: @my_pink;
 }
 
 #custom-memory-icon {
+	font-weight: 600;
 	color: @my_yellow;
 	font-size: 9px;
 }
 
 #memory {
 	color: @my_yellow;
+	font-weight: 200;
 }
 
 #custom-network-icon {
+	font-weight: 600;
 	color: @my_pink;
 	font-size: 9px;
 }
@@ -106,6 +114,7 @@ tooltip * {
 }
 
 #network {
+	font-weight: 300;
 	color: @my_green;
 }
 
@@ -114,12 +123,18 @@ tooltip * {
 }
 
 #custom-disk-icon {
+	font-weight: 600;
 	color: @my_light_purple;
 	font-size: 9px;
 }
 	
 #disk {
+	font-weight: 200;
 	color: @my_light_purple;
+}
+
+#mpris {
+	color: @my_ocean_blue;
 }
 
 #wireplumber{

@@ -24,6 +24,7 @@
 	"modules-right": [
 		"bluetooth",
 		"hyprland/language",
+		"privacy",
 		"wireplumber"
 	],
 	"spacing": 5,
@@ -85,7 +86,7 @@
 	}, 
 
 	"hyprland/language": {
-		"format": "⌨️i {}\t",
+		"format": "⌨️ {}\t",
 		"format-en": "English",
 		"format-uk": "Українська",
 	},
@@ -112,8 +113,6 @@
 	},
 	
 	"temperature": {
-		"interval": 1,
-		"thermal-zone": 2,
 		"format": "{icon} {temperatureC}°C",
        		"format-icons": [""],
 	},
@@ -137,11 +136,12 @@
 	
 	"wireplumber": {
 		"format": "{icon} {volume}%\t",
-		"format-muted": "🔇",
+		"format-muted": "🔇\t\t",
 		"format-icons": {
 			"headphones": "headphonts",
 			"default": [
 				"🔈",
+				"🔉",
 				"🔊"
 			]
 		},
@@ -154,7 +154,7 @@
 	"position": "top",
 	"modules-left": ["cpu"],
 	"modules-center": ["hyprland/window"],
-	"modules-right": ["custom/cava"],
+	"modules-right": ["cava"],
 	
 	"cpu": {
 		"margin-top": 50,
@@ -180,6 +180,20 @@
 	"layer": "top",
 	"position": "bottom",
 	"modules-center": ["hyprland/workspaces"],
+	"modules-right": ["mpris"],
 	"mode": "dock", // CHANGE THE VALUE TO "hide" - hidden unless the modifier key is pressed
 	// "modifier-reset" https://github.com/Alexays/Waybar/wiki/Configuration#modifier-reset
+
+	"mpris": {
+		"margin-bottom": 5,
+                "format": "DEFAULT: {player_icon} {dynamic}\t\t\t\t\t\t",
+                "format-paused": "DEFAULT: {status_icon} <i>{dynamic}</i>\t\t\t\t\t\t",
+                "player-icons": {
+                        "default": "▶",
+                        "mpv": "🎵"
+                },
+                "status-icons": {
+                        "paused": "⏸ ",
+                },
+        },
 }]
