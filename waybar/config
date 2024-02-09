@@ -18,6 +18,7 @@
         ],
 	"modules-center":[
 		"clock#1",
+		"custom/space_btw_c1nc2",
 		"clock#2",
 		"clock#3",
 	],
@@ -41,7 +42,11 @@
 		"tooltip": false
 	},
 
-		
+	"custom/space_btw_c1nc2": {
+		"format": "123",
+		"max-length": 1,
+	},
+
 	"clock#2": {
 		"format": "{:%H:%M}",
 		"timezone": "Europe/Chisinau",
@@ -127,7 +132,7 @@
 },
 
 	"custom/disk-icon": {
-		"format": "\tS\n\tS\n\tD",
+		"format": "S\nS\nD",
 	},
 	
 	"disk": {
