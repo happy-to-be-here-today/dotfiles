@@ -1,36 +1,12 @@
-@define-color neon_purple rgb(95, 26, 109);
-@define-color neon_red rgb(249, 19, 77);
-@define-color neon_yellow rgb(252, 252, 0);
-@define-color bright_purple rgb(159, 71, 232);
-@define-color neon_pink rgb(232, 71, 224);
-@define-color bluish_purple rgb(79, 71, 232);
-
-@define-color neon_green rgb(138, 252, 132);
-@define-color salad_green rgb(131, 252, 185);
-@define-color cyan rgb(131, 252, 246);
-@define-color light_purple rgb(182, 141, 239);
-@define-color dark_blue rgb(26, 21, 124);
-
-@define-color workspace_blue rgb(0, 0, 15);
-
+@define-color opaque_black rgba(0, 0, 0, 0.8);
 * {
 	font-family: Tektur, 'Font Awesome 5';
 }
 
 window.main#waybar{
-	background: rgba(0, 0, 0, 0.1);
+	background: transparent; 
 	font-size: 15px;
-	border-width: 2px;
-	border-image: linear-gradient(130deg, @neon_purple 3%, @bright_purple 9%, @neon_red 15%, @neon_yellow 22%, @neon_red 30%, @neon_pink 40%, @bluish_purple 45%, @cyan 50%, @cyan 55%, @neon_green 63%, @neon_green 71%, @light_purple 81%, @light_purple 84%, @cyan 88%, @dark_blue 96%) 30;
-	border-style: solid;
-	border-radius: 0px;
-	color: black;
-}
-
-window.window_display#waybar{
-	/* background: linear-gradient(50deg, @cyan 10%, @my_pink 17%, @my_yellow 19%, @my_yellow 23%, @my_pink 28%, @cyan 31%, @my_pink 36%, @cyan 44%, @cyan 47%, rgba(17, 252, 228, 0.7) 55%, @my_green 68%, @my_green 71%, @light_purple 78%, @very_light_purple 82%, @light_blue 88%, @cyan 91%, @dark_blue 98%); */
-	background: transparent;
-	color: @cyan;
+	color: white;
 }
 
 window.workspaces_display#waybar{
@@ -38,14 +14,13 @@ window.workspaces_display#waybar{
 }
 
 window.workspaces_display#waybar #window{
-	color: @cyan;
+	color: white;
+	background: transparent;
 }
 
 tooltip * {
-	color: @cyan;
-	border-image: linear-gradient(130deg, @my_pink 0%, @my_pink 3%, @cyan 10%, @my_pink 17%, @my_yellow 19%, @my_yellow 23%, @my_pink 28%, @cyan 31%, @my_pink 36%, @cyan 44%, @cyan 47%, @dark_blue 52%, @dark_blue 53%, rgba(17, 252, 228, 0.7) 55%, @my_green 68%, @my_green 71%, @light_purple 80%, @very_light_purple 82%, @light_blue 86%, @cyan 89%, @my_pink 95%) 30;
-	background: linear-gradient(130deg, @my_purple 15%, black 50%, @dark_blue 85%);
-	opacity: 1;
+	color: white;
+	background: @opaque_black;
 	border-style: solid;
 	border-width: 2px;
 }
@@ -53,39 +28,89 @@ tooltip * {
 #clock.1 {
 	font-weight: 600;
 	font-size: 10px;
-	color: @cyan;
-	background: black;
-	border: 1.5px solid @cyan;
+	color: white;
+	background: @opaque_black;
+	border: 5px inset white;
 	border-right: none;
+	padding-right: 10px;
 	padding-left: 5px;
 }
 
-#custom-space_btw_c1nc2 {
-	border: 1.5px solid @cyan;
-}
-
-#clock.2 {
-	font-weight: 500;
+#clock.2 { font-weight: 500;
 	font-size: 26px;
-	color: @cyan;
-	background: black;
-	border: 1.5px solid @cyan;
+	color: white;
+	background: @opaque_black;
+	border: 5px solid white;
 	border-left: none;
-	border-right: none;
-}
+	border-right: none; }
 
 #clock.3 {
 	font-weight: 600;
 	font-size: 10px;
-	color: @cyan;
-	background: black;
-	border: 1.5px solid @cyan;
+	color: white;
+	background: @opaque_black;
+	border: 5px inset white;
+	border-style: inset;
+	border-left: none;
+	padding-left: 10px;
+	padding-right: 5px;
+}
+
+/* MODULES, ICONS FROM THE LEFT AND RIGHT - SHARED STYLE */
+
+#bluetooth,
+#language,
+#custom-memory-icon,
+#memory,
+#temerature,
+#custom-cpu-icon,
+#cpu,
+#custom-network-icon,
+#network,
+#custom-disk-icon,
+#disk,
+#mpris,
+#wireplumber {
+	border: 1.5px solid white;
+	background: @opaque_black;
+	color: white;
+}
+
+/* LEFT ICONS - SHARED STYLE */
+
+#custom-memory-icon,
+#custom-cpu-icon,
+#custom-network-icon,
+#custom-disk-icon {
+	border-right: none;
+	padding-right: 5px; 
+	padding-left: 6px;
+	margin-left: 8px;
+}
+
+/* LEFT MODULES - SHARED STYLE */
+
+#memory,
+#cpu,
+#network, 
+#disk {
 	border-left: none;
 	padding-right: 5px;
 }
 
+/* RIGHT MODULES - SHARED STYLE */
+#bluetooth,
+#language,
+#mpris,
+#wireplumber {
+	padding-left: 5px;
+	padding-right: 5px;
+	margin-right: 8px;
+}
+
 #bluetooth {
-	color: @cyan;
+	color: white;
+	background: @opaque_black;
 }
 
 #language {
@@ -95,18 +120,23 @@ tooltip * {
 
 #custom-cpu-icon {
 	font-weight: 600;
-	color: @my_pink;
 	font-size: 9px;
+	border-right: none;
+	padding-right: 5px;
 }
 
 #cpu {
-	color: @my_pink; 
 	font-weight: 200;
+	border-right: none;
+	color: white;
 }
 
 #temperature {
 	font-weight: 200;
-	color: @my_pink;
+	color: white;
+	border: 1.5px solid white;
+	border-left: none;
+	padding-right: 5px;
 }
 
 #custom-memory-icon {
@@ -126,48 +156,49 @@ tooltip * {
 	font-size: 9px;
 }
 
-#custom-cava {
-	color: @cyan;
-}
-
 #network {
 	font-weight: 300;
 	color: @my_green;
 }
 
-#privacy {
-	color: @cyan;
-}
-
 #custom-disk-icon {
 	font-weight: 600;
-	color: @neon_purple;
 	font-size: 9px;
-	background: black;
-	border: 1.5px solid @neon_purple;
 	border-right: none;
-	padding-left: 5px;
 }
 	
 #disk {
 	font-weight: 200;
-	color: @neon_purple;
-	background: black;
-	border: 1.5px solid @neon_purple;
-	border-left: none;
 	padding-right: 5px;
 }
 
 #mpris {
-	color: @my_green;
 }
 
 #wireplumber{
-	color: @my_ocean_blue;
 }
 
 #workspaces button.active{
-	background-color: @workspace_blue;
-	color: @cyan;
+	color: black;
+	background: rgb(239, 79, 4);
 }
 
+#workspaces button{
+	color: white;
+	background: @opaque_black;
+	border: 1.5px solid white;
+	margin: 5px;
+}
+
+window.window_display#waybar {
+        background: transparent;
+        color: white;
+}
+
+#window {
+        border: 1.5px solid white;
+        background: @opaque_black;
+        border-radius: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+}

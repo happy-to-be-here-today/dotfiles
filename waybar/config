@@ -13,38 +13,23 @@
 		"custom/cpu-icon",
                 "cpu", 
 		"temperature",
-		"custom/memory-icon",
-                "memory",
+		"custom/memory-icon", "memory",
         ],
 	"modules-center":[
 		"clock#1",
-		"custom/space_btw_c1nc2",
 		"clock#2",
 		"clock#3",
 	],
 	"modules-right": [
 		"bluetooth",
 		"hyprland/language",
-		"privacy",
 		"wireplumber"
 	],
-	"spacing": 5,
 	
-	"style": {
-		"smaller-font": {
-			"font-size": "50%"
-		}
-	},
-
 	"clock#1": { 
-		"format": "{:%a\n  %U}",
+		"format": "{:%a\n%U}",
 		"timezone": "Europe/Chisinau",
 		"tooltip": false
-	},
-
-	"custom/space_btw_c1nc2": {
-		"format": "123",
-		"max-length": 1,
 	},
 
 	"clock#2": {
@@ -82,38 +67,37 @@
 
 	"bluetooth": {
 		// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
-		"format": " {status}",
+		"format": "<span color='#007fff'></span> {status}",
 		"format-disabled": "", // an empty format will hide the module
-		"format-connected": " {num_connections} connected",
+		"format-connected": "<span color='#007fff'></span> {num_connections} connected",
 		"tooltip-format": "{controller_alias}\t{controller_address}",
 		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
 		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
 	}, 
 
 	"hyprland/language": {
-		"format": "⌨️ {}\t",
+		"format": "⌨️ {}",
 		"format-en": "English",
 		"format-uk": "Українська",
 	},
 
 	"custom/cpu-icon": {
 		"margin-top": 10,
-		"format": "\tC\n\tP\n\tU",
+		"format": "C\nP\nU",
 	},
 	
 	"cpu": {
+		"name": "main_cpu",
 		"format": "<span size='small'>| Usage: {usage}%\n| Load: {load}%</span>",
 		"interval": 1,
-		
 	},
 	
 	"custom/memory-icon": {
-		"format": "    M\n    E\n    M",
+		"format": "M\nE\nM",
 	},
 
 	"memory": {
 		"format": "<span size='small'>| Usage: {percentage} %\n| Total: {used}/{total}</span>",
-		"interval": 1,
 		"interval": 1,
 	},
 	
@@ -123,12 +107,12 @@
 	},
 	
 	"custom/network-icon": {
-		"format": "    N\n    E\n    T",
+		"format": "N\nE\nT",
 	},
 	
 	"network": {
 		"interval": 2,
-		"format": "<span size='small'><span color='#f9134d'>↑ {bandwidthUpBytes}\n</span>↓ {bandwidthDownBytes}</span>",
+		"format": "<span size='small'><span color='#f9134d'>↑ {bandwidthUpBytes}\n</span><span color='#7fff00'>↓{bandwidthDownBytes}</span></span>",
 },
 
 	"custom/disk-icon": {
@@ -140,7 +124,7 @@
 	},
 	
 	"wireplumber": {
-		"format": "{icon} {volume}%\t",
+		"format": "{icon} {volume}%",
 		"format-muted": "🔇\t\t",
 		"format-icons": {
 			"headphones": "headphonts",
@@ -157,26 +141,27 @@
 	"name": "window_display",
 	"layer": "bottom",
 	"position": "top",
-	"modules-left": ["cpu"],
+//	"modules-left": ["cpu"],
 	"modules-center": ["hyprland/window"],
-	"modules-right": ["cava"],
+//	"modules-right": ["cava"],
 	
-	"cpu": {
-		"margin-top": 50,
-		"rotate": 180,
-                "interval": 1,
-                "format": "<span color='#11fce4'>{icon0}   {icon1}</span>   <span color='#f9134d'>{icon2}   {icon3}   {icon4}</span>   <span color='#11fce4'>{icon5}   {icon6}</span>   <span color='#f9134d'>{icon7}   {icon8}</span>   <span color='#e2e847'>{icon9}   {icon10}   {icon11}   {icon12}</span>   <span color='#f9134d'>{icon13}   {icon14}   {icon15}</span>   <span color='#5f1a6d'>{icon16}   {icon17}   {icon18}   {icon19}</span>    ",
-                "format-icons": [
-                        "<span color='#000000'>▁▁</span>",
-                        "▂▂", 
-                        "▃▃", 
-                        "▄▄", 
-                        "▅▅", 
-                        "▆▆", 
-                        "▇▇", 
-                        "██" 
-                ]
-        },
+//	"cpu": {
+//		"name" : "window_display_cpu",
+//		"margin-top": 50,
+//		"rotate": 180,
+ //               "interval": 1,
+  //              "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}{icon12}{icon13}{icon14}{icon15}{icon16}{icon17}{icon18}{icon19}",
+   //             "format-icons": [
+    //                    "▁▁",
+     //                   "▂▂", 
+      //                  "▃▃", 
+     //                   "▄▄", 
+      //                  "▅▅", 
+       //                 "▆▆", 
+        //                "▇▇", 
+         //               "██" 
+          //      ]
+//        },
 	
 },
 
@@ -190,9 +175,11 @@
 	// "modifier-reset" https://github.com/Alexays/Waybar/wiki/Configuration#modifier-reset
 
 	"mpris": {
+		"width": 100,
+		"max-length": 100,
 		"margin-bottom": 5,
-                "format": "DEFAULT: {player_icon} {dynamic}\t\t\t\t\t\t",
-                "format-paused": "DEFAULT: {status_icon} <i>{dynamic}</i>\t\t\t\t\t\t",
+                "format": "{player_icon} {dynamic}",
+                "format-paused": "{status_icon} <i>{dynamic}</i>",
                 "player-icons": {
                         "default": "▶",
                         "mpv": "🎵"
