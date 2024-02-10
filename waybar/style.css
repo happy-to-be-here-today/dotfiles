@@ -1,6 +1,7 @@
-@define-color opaque_black rgba(0, 0, 0, 0.5);
+@define-color opaque_black rgba(0, 0, 0, 0.8);
 @define-color border rgb(239, 79, 4);
 @define-color opaque_orange rgba(239, 79, 4, 0.2);
+@define-color text rgba(137, 144, 138, 1);
 * {
 	font-family: Tektur, 'Font Awesome 5';
 }
@@ -8,7 +9,7 @@
 window.main#waybar{
 	background: transparent; 
 	font-size: 15px;
-	color: white;
+	color: rgb(234, 144, 103);
 }
 
 window.workspaces_display#waybar{
@@ -32,7 +33,7 @@ tooltip * {
 	font-size: 10px;
 	color: black;
 	background: @opaque_orange;
-	border: 5px solid @border;
+	border: 2px solid @border;
 	border-right: none;
 	padding-right: 10px;
 	padding-left: 5px;
@@ -42,16 +43,17 @@ tooltip * {
 	font-size: 26px;
 	color: black;
 	background: @opaque_orange;
-	border: 5px solid @border;
+	border: 2px solid @border;
 	border-left: none;
-	border-right: none; }
+	border-right: none; 
+}
 
 #clock.3 {
 	font-weight: 600;
 	font-size: 10px;
 	color: black;
 	background: @opaque_orange;
-	border: 5px solid @border;
+	border: 2px solid @border;
 	border-left: none;
 	padding-left: 10px;
 	padding-right: 5px;
@@ -73,8 +75,8 @@ tooltip * {
 #mpris,
 #wireplumber {
 	border: 1.5px solid @border;
-	background: @opaque_orange;
-	color: white;
+	background: @opaque_black;
+	color: @text;
 }
 
 /* LEFT ICONS - SHARED STYLE */
@@ -110,13 +112,13 @@ tooltip * {
 }
 
 #bluetooth {
-	color: white;
+	color: @text;
 	background: @opaque_black;
 }
 
 #language {
 	font-size: 12px;
-	color: @cyan;
+	color: @text;
 }
 
 #custom-cpu-icon {
@@ -129,13 +131,13 @@ tooltip * {
 #cpu {
 	font-weight: 200;
 	border-right: none;
-	color: white;
+	color: @text;
 }
 
 #temperature {
 	font-weight: 200;
-	color: white;
-	background: @opaque_orange;
+	color: @text;
+	background: @opaque_black;
 	border: 1.5px solid @border;
 	border-left: none;
 	padding-right: 5px;
@@ -143,25 +145,24 @@ tooltip * {
 
 #custom-memory-icon {
 	font-weight: 600;
-	color: @my_yellow;
+	color: @text;
 	font-size: 9px;
 }
 
 #memory {
-	color: @my_yellow;
-	background: rgba(239, 79, 4, 0.3);
+	color: @text;
 	font-weight: 200;
 }
 
 #custom-network-icon {
 	font-weight: 600;
-	color: @my_pink;
+	color: @text;
 	font-size: 9px;
 }
 
 #network {
 	font-weight: 300;
-	color: @my_green;
+	color: @text;
 }
 
 #custom-disk-icon {
@@ -176,13 +177,15 @@ tooltip * {
 }
 
 #mpris {
+	background: @opaque_black;
+	color: rgb(239, 79, 4);
 }
 
 #wireplumber{
 }
 
 #bluetooth{
-	background: @opaque_orange;
+	background: @opaque_black;
 }
 
 #workspaces button.active{
@@ -199,12 +202,15 @@ tooltip * {
 
 window.window_display#waybar {
         background: transparent;
+	margin-top: 2px;
         color: white;
 }
 
 #window {
+	margin-top: 2px;
         border: 1.5px solid @border;
-        background: @opaque_black;
+        background: @opaque_orange;
+	color: black;
         border-radius: 10px;
         padding-left: 5px;
         padding-right: 5px;
