@@ -2,6 +2,8 @@
 @define-color border rgb(239, 79, 4);
 @define-color opaque_orange rgba(239, 79, 4, 0.2);
 @define-color text rgba(137, 144, 138, 1);
+@define-color text_clock rgb(96, 109, 96);
+@define-color border_top rgb(91, 106, 96);
 * {
 	font-family: Tektur, 'Font Awesome 5';
 }
@@ -21,19 +23,12 @@ window.workspaces_display#waybar #window{
 	background: transparent;
 }
 
-tooltip * {
-	color: white;
-	background: @opaque_black;
-	border-style: solid;
-	border-width: 2px;
-}
-
 #clock.1 {
 	font-weight: 600;
 	font-size: 10px;
-	color: black;
-	background: @opaque_orange;
-	border: 2px solid @border;
+	color: @text_clock;
+	background: @opaque_black;
+	border: 2px solid @border-top;
 	border-right: none;
 	padding-right: 10px;
 	padding-left: 5px;
@@ -41,9 +36,9 @@ tooltip * {
 
 #clock.2 { font-weight: 500;
 	font-size: 26px;
-	color: black;
-	background: @opaque_orange;
-	border: 2px solid @border;
+	color: @text_clock;
+	background: @opaque_black;
+	border: 2px solid @border-top;
 	border-left: none;
 	border-right: none; 
 }
@@ -51,9 +46,9 @@ tooltip * {
 #clock.3 {
 	font-weight: 600;
 	font-size: 10px;
-	color: black;
-	background: @opaque_orange;
-	border: 2px solid @border;
+	color: @text_clock;
+	background: @opaque_black;
+	border: 2px solid @border-top;
 	border-left: none;
 	padding-left: 10px;
 	padding-right: 5px;
@@ -74,7 +69,7 @@ tooltip * {
 #disk,
 #mpris,
 #wireplumber {
-	border: 1.5px solid @border;
+	border: 1.5px solid @border-top;
 	background: @opaque_black;
 	color: @text;
 }
@@ -105,6 +100,7 @@ tooltip * {
 #bluetooth,
 #language,
 #mpris,
+#tray,
 #wireplumber {
 	padding-left: 5px;
 	padding-right: 5px;
@@ -117,6 +113,7 @@ tooltip * {
 }
 
 #language {
+	font-weight: 200;
 	font-size: 12px;
 	color: @text;
 }
@@ -134,13 +131,22 @@ tooltip * {
 	color: @text;
 }
 
-#temperature {
-	font-weight: 200;
+#custom-temperature-icon {
 	color: @text;
 	background: @opaque_black;
-	border: 1.5px solid @border;
+	border: 1.5px solid @border-top;
 	border-left: none;
+	border-right: none;
+	font-size: 24px;
 	padding-right: 5px;
+	}
+
+#custom-temperature {
+	color: @text;
+	background: @opaque_black;
+	border: 1.5px solid @border-top;
+	border-left: none;
+	font-size: 6px;
 }
 
 #custom-memory-icon {
@@ -177,26 +183,35 @@ tooltip * {
 }
 
 #mpris {
+	border-radius: 7px;
 	background: @opaque_black;
 	color: rgb(239, 79, 4);
+	margin: 5px;
+}
+
+#tray {
 }
 
 #wireplumber{
+	font-weight: 400;
+	padding-top: 5px;
 }
 
 #bluetooth{
+	font-weight: 200;
 	background: @opaque_black;
 }
 
 #workspaces button.active{
 	color: black;
 	background: rgb(239, 79, 4);
+	border: 3px solid @opaque_black;
 }
 
 #workspaces button{
 	color: rgb(239, 79, 4);
 	background: @opaque_black;
-	border: 1.5px solid @border;
+	border: 2px solid @border;
 	margin: 5px;
 }
 
@@ -208,10 +223,20 @@ window.window_display#waybar {
 
 #window {
 	margin-top: 2px;
-        border: 1.5px solid @border;
-        background: @opaque_orange;
-	color: black;
+        border: 1.5px solid @border-top;
+        background: @opaque_black;
+	color: @text_clock;
         border-radius: 10px;
         padding-left: 5px;
         padding-right: 5px;
+}
+
+#custom-powermenu {
+	padding-right: 5px;
+	padding-left: 5px;
+	margin-right: 5px;
+	background: @opaque_black;
+	color: @text;
+	border: 1.5px solid @border-top;
+	border-radius: 20px;
 }

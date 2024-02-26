@@ -4,16 +4,17 @@
 [{ // MAIN WAYBAR
 	"name": "main",
 	"layer": "bottom",
-	"position": "top",
-	"modules-left": [
+	"position": "top", "modules-left": [
 		"custom/disk-icon",
 		"disk",
 		"custom/network-icon",
 		"network",
 		"custom/cpu-icon",
                 "cpu", 
-		"temperature",
-		"custom/memory-icon", "memory",
+		"custom/temperature-icon",
+		"custom/temperature",
+		"custom/memory-icon", 
+		"memory",
         ],
 	"modules-center":[
 		"clock#1",
@@ -21,9 +22,12 @@
 		"clock#3",
 	],
 	"modules-right": [
+		"tray",
+		"privacy",
 		"bluetooth",
 		"hyprland/language",
-		"wireplumber"
+		"wireplumber",
+		"custom/powermenu"
 	],
 	
 	"clock#1": { 
@@ -64,6 +68,10 @@
                         "on-scroll-down": "shift_down"
                 },
 	},
+	
+	"tray": {
+		"format": " {} ",
+	},
 
 	"bluetooth": {
 		// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
@@ -101,9 +109,14 @@
 		"interval": 1,
 	},
 	
-	"temperature": {
-		"format": "{icon} {temperatureC}°C",
-       		"format-icons": [""],
+	"custom/temperature-icon": {
+       		"format": "",
+	},
+	
+	"custom/temperature": {
+		"exec": "cat /sys/class/hwmon/hwmon5/*_input",
+		"format": "{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}",
+		"interval": 1,
 	},
 	
 	"custom/network-icon": {
@@ -135,6 +148,11 @@
 			]
 		},
 	},
+	
+	"custom/powermenu": {
+		"format": "⏻",
+		"on-click": "~/.config/rofi/powermenu/type-4/powermenu.sh"
+	},		
 },
 
 { // CURRENT WINDOW
@@ -143,8 +161,12 @@
 	"position": "top",
 //	"modules-left": ["cpu"],
 	"modules-center": ["hyprland/window"],
-//	"modules-right": ["cava"],
+	"modules-right": ["custom/weather"],
 	
+	"custom/weather": {
+
+	}	
+
 //	"cpu": {
 //		"name" : "window_display_cpu",
 //		"margin-top": 50,
@@ -175,17 +197,18 @@
 	// "modifier-reset" https://github.com/Alexays/Waybar/wiki/Configuration#modifier-reset
 
 	"mpris": {
+		"on-click": "~/.config/rofi/applets/bin/mpd.sh",
 		"width": 100,
 		"max-length": 100,
 		"margin-bottom": 5,
                 "format": "{player_icon} {dynamic}",
-                "format-paused": "{status_icon} <i>{dynamic}</i>",
+                "format-paused": "{status_icon} {dynamic}",
                 "player-icons": {
-                        "default": "▶",
+                        "default": "⏸",
                         "mpv": "🎵"
                 },
                 "status-icons": {
-                        "paused": "⏸ ",
+                        "paused": "▶",
                 },
         },
 }]
