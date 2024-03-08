@@ -4,7 +4,8 @@
 [{ // MAIN WAYBAR
 	"name": "main",
 	"layer": "bottom",
-	"position": "top", "modules-left": [
+	"position": "top", 
+	"modules-left": [
 		"custom/disk-icon",
 		"disk",
 		"custom/network-icon",
@@ -22,13 +23,16 @@
 		"clock#3",
 	],
 	"modules-right": [
-		"tray",
-		"privacy",
-		"bluetooth",
 		"hyprland/language",
 		"wireplumber",
-		"custom/powermenu"
+		"custom/powermenu",
 	],
+	
+	"custom/stocks": {
+                "format": "{}",
+                "exec": "python -u ~/Daev/stocks/stock_custom_mstr_to_img/simple_stock_value.py",
+                "interval": 30,
+        },
 	
 	"clock#1": { 
 		"format": "{:%a\n%U}",
@@ -115,7 +119,7 @@
 	
 	"custom/temperature": {
 		"exec": "cat /sys/class/hwmon/hwmon5/*_input",
-		"format": "{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}",
+		"format": "{}",
 		"interval": 1,
 	},
 	
@@ -125,7 +129,7 @@
 	
 	"network": {
 		"interval": 2,
-		"format": "<span size='small'><span color='#f9134d'>↑ {bandwidthUpBytes}\n</span><span color='#7fff00'>↓{bandwidthDownBytes}</span></span>",
+		"format": "<span size='small'><span color='#fca635'>↑ {bandwidthUpBytes}\n</span><span color='#7bfc76'>↓{bandwidthDownBytes}</span></span>",
 },
 
 	"custom/disk-icon": {
@@ -138,7 +142,7 @@
 	
 	"wireplumber": {
 		"format": "{icon} {volume}%",
-		"format-muted": "🔇\t\t",
+		"format-muted": "<span color='#fc0505'>🔇 muted</span>",
 		"format-icons": {
 			"headphones": "headphonts",
 			"default": [
@@ -159,14 +163,15 @@
 	"name": "window_display",
 	"layer": "bottom",
 	"position": "top",
-//	"modules-left": ["cpu"],
+	"modules-left": ["custom/stocks"],
 	"modules-center": ["hyprland/window"],
-	"modules-right": ["custom/weather"],
+
+	"custom/stocks": {
+                "format": "{}",
+                "exec": "python -u ~/Daev/stocks/stock_custom_mstr_to_img/simple_stock_value.py",
+                "interval": 30,
+        },
 	
-	"custom/weather": {
-
-	}	
-
 //	"cpu": {
 //		"name" : "window_display_cpu",
 //		"margin-top": 50,

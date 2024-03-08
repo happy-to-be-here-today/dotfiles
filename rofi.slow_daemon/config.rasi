@@ -1,0 +1,32 @@
+configuration {
+    modi: "combi";
+    font: "mono 16";
+    combi-modi: "window,drun,ssh,filebrowser,keys,script";
+}
+
+@theme "default"
+
+window {
+    background-color: rgb(41, 42, 44);
+}
+
+entry {
+    placeholder: "";
+    cursor: pointer;
+}
+
+element {
+    orientation: horizontal;
+    children: [element-text, element-icon];
+    spacing: 10px;
+}
+
+element-icon {
+    size: 1.2em;
+}
+
+entry, element-text {
+    text-color: white;
+    background-color: rgb(39, 45, 61);
+}
+

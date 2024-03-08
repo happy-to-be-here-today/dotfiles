@@ -18,6 +18,10 @@ window.workspaces_display#waybar{
 	background: transparent;
 }
 
+window.window_display#waybar {
+	background: transparent;
+}
+
 window.workspaces_display#waybar #window{
 	color: white;
 	background: transparent;
@@ -146,7 +150,8 @@ window.workspaces_display#waybar #window{
 	background: @opaque_black;
 	border: 1.5px solid @border-top;
 	border-left: none;
-	font-size: 6px;
+	font-size: 9px;
+	padding-right: 5px;
 }
 
 #custom-memory-icon {
@@ -186,7 +191,9 @@ window.workspaces_display#waybar #window{
 	border-radius: 7px;
 	background: @opaque_black;
 	color: rgb(239, 79, 4);
-	margin: 5px;
+	margin-right: 9px;
+	padding: 5px;
+	margin-bottom: 5px;
 }
 
 #tray {
@@ -206,23 +213,20 @@ window.workspaces_display#waybar #window{
 	color: black;
 	background: rgb(239, 79, 4);
 	border: 3px solid @opaque_black;
+	margin-bottom: 5px;
 }
 
 #workspaces button{
 	color: rgb(239, 79, 4);
 	background: @opaque_black;
 	border: 2px solid @border;
-	margin: 5px;
-}
-
-window.window_display#waybar {
-        background: transparent;
-	margin-top: 2px;
-        color: white;
+	margin-left: 5px;
+	margin-bottom: 5px;
+	margin-right: 5px;
 }
 
 #window {
-	margin-top: 2px;
+	margin-top: 5px;
         border: 1.5px solid @border-top;
         background: @opaque_black;
 	color: @text_clock;
@@ -234,9 +238,29 @@ window.window_display#waybar {
 #custom-powermenu {
 	padding-right: 5px;
 	padding-left: 5px;
-	margin-right: 5px;
-	background: @opaque_black;
-	color: @text;
-	border: 1.5px solid @border-top;
+	margin-right: 8px;
+	background: @opaque_black; 
+	color: rgb(252, 0, 70);
+	border: 1.5px solid @text;
 	border-radius: 20px;
 }
+
+#privacy {
+	border: 1.5px solid @border-top;
+	background: white;
+	color: green;
+}
+
+#custom-stocks {
+	border: 1.5px solid @text;
+	border-radius: 10px;
+	margin-top: 5px;
+	color: @text;
+	background: @opaque_black;
+	border: 1.5px solid @text;
+	margin-left: 8px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+
