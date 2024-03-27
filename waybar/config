@@ -16,26 +16,74 @@
 		"custom/temperature",
 		"custom/memory-icon", 
 		"memory",
+		"privacy",
         ],
 	"modules-center":[
+		"user",
 		"clock#1",
-		"clock#2",
+		"clock#2", 
 		"clock#3",
-	],
-	"modules-right": [
-		"hyprland/language",
-		"wireplumber",
 		"custom/powermenu",
 	],
+	"modules-right": [
+		"custom/pacman_icon",
+		"custom/pacman_data",
+		"hyprland/language",
+		"wireplumber",
+	],
 	
+	"user": {
+		"format": "",
+		"avatar": "/home/slow_daemon/Pictures/Daemon_user.png",
+		"icon": true,
+		"width": 24,
+		"height": 24,
+	},
+
+	"privacy": {
+	"icon-spacing": 4,
+	"icon-size": 18,
+	"transition-duration": 250,
+	"modules": [
+		{
+			"type": "screenshare",
+			"tooltip": true,
+			"tooltip-icon-size": 24
+		},
+		{
+			"type": "audio-in",
+			"tooltip": true,
+			"tooltip-icon-size": 24
+		},
+		{
+			"type": "audio-out",
+			"tooltip": true,
+			"tooltip-icon-size": 20
+		}
+	]},
+	
+	"custom/pacman_icon": {
+		"format": "<span size='large' foreground='yellow'>◔</span>",
+		"rotate": 315,
+	},
+
+	"custom/pacman_data": {
+		"return-type": "json",
+		"exec": "~/Scripts/pacman_check_update.sh",
+		"format": "{}",
+		"interval": 300,
+		"tooltip-format": "{}",
+	},
+
 	"custom/stocks": {
                 "format": "{}",
-                "exec": "python -u ~/Daev/stocks/stock_custom_mstr_to_img/simple_stock_value.py",
+                //"exec": "python -u ~/Daev/stocks/stock_custom_mstr_to_img/simple_stock_value.py",
+		"exec": "python ~/Scripts/string.py",
                 "interval": 30,
         },
 	
 	"clock#1": { 
-		"format": "{:%a\n%U}",
+		"format": "{:%a\n   %U}",
 		"timezone": "Europe/Chisinau",
 		"tooltip": false
 	},
@@ -73,10 +121,6 @@
                 },
 	},
 	
-	"tray": {
-		"format": " {} ",
-	},
-
 	"bluetooth": {
 		// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
 		"format": "<span color='#007fff'></span> {status}",
@@ -118,9 +162,8 @@
 	},
 	
 	"custom/temperature": {
-		"exec": "cat /sys/class/hwmon/hwmon5/*_input",
 		"format": "{}",
-		"interval": 1,
+		"exec": "python ~/Scripts/get_cpu_temp/get_cpu_temp.py",
 	},
 	
 	"custom/network-icon": {
@@ -165,6 +208,13 @@
 	"position": "top",
 	"modules-left": ["custom/stocks"],
 	"modules-center": ["hyprland/window"],
+	"modules-right": ["tray"],
+
+	"tray": {
+                "format": " {} ",
+		"show-passive-items": true,
+                "spacing": 17,
+        },
 
 	"custom/stocks": {
                 "format": "{}",
@@ -209,11 +259,11 @@
                 "format": "{player_icon} {dynamic}",
                 "format-paused": "{status_icon} {dynamic}",
                 "player-icons": {
-                        "default": "⏸",
+                        "default": "<span size='large'>𝄞</span>",
                         "mpv": "🎵"
                 },
                 "status-icons": {
-                        "paused": "▶",
+                        "paused": "<span size='large'>𝄩</span>",
                 },
         },
 }]
